@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vertical Tabs — Left Side Panel</title>
+  <link rel="stylesheet" href="./rootvars.css">
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <p>Built using <strong>DeepSeek Harness -Agentic AI.</strong></p>
+  </header>
+
+  <div class="app">
+
+    <!-- ============ left-hand tab region ============ -->
+    <div class="tab-region">
+
+      <!-- vertical tab rail -->
+      <div class="tablist" role="tablist" aria-orientation="vertical" aria-label="Side panel">
+
+        <div class="tablist-label">Panels</div>
+
+        <button class="tab" id="tab-overview" role="tab" type="button" aria-selected="true"
+          aria-controls="panel-overview" tabindex="0">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 11v5" />
+            <circle cx="12" cy="7.6" r=".9" fill="currentColor" stroke="none" />
+          </svg>
+          <span class="label" title="Start Postgres on your system">Start Postgres</span>
+        </button>
+
+        <button class="tab" id="tab-files" role="tab" type="button" aria-selected="false" aria-controls="panel-files"
+          tabindex="-1">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 7a2 2 0 0 1 2-2h3.6l2 2H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          </svg>
+          <span class="label" title="Meta Commands">Meta Commands</span>
+        </button>
+
+        <button class="tab" id="tab-activity" role="tab" type="button" aria-selected="false"
+          aria-controls="panel-activity" tabindex="-1">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12h3.5l2.5-7 4 14 2.5-7H21" />
+          </svg>
+          <span class="label" title="Standard SQL Commands">Standard SQL</span>
+        </button>
+
+        <button class="tab" id="tab-settings" role="tab" type="button" aria-selected="false"
+          aria-controls="panel-settings" tabindex="-1">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+            <circle cx="9" cy="6" r="2.4" fill="currentColor" stroke="none" />
+            <circle cx="15" cy="12" r="2.4" fill="currentColor" stroke="none" />
+            <circle cx="8" cy="18" r="2.4" fill="currentColor" stroke="none" />
+          </svg>
+          <span class="label">Settings</span>
+        </button>
+
+        <button class="tab" id="tab-help" role="tab" type="button" aria-selected="false" aria-controls="panel-help"
+          tabindex="-1">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M9.6 9.6a2.5 2.5 0 1 1 3.4 2.3c-.7.35-1 .9-1 1.6v.4" />
+            <circle cx="12" cy="17" r=".9" fill="currentColor" stroke="none" />
+          </svg>
+          <span class="label">Help</span>
+        </button>
+
+        <div class="rail-footer">&copy; placeholder rail</div>
+      </div>
+
+      <!-- content panel -->
+      <div class="panel" id="tab-panel">
+        <div class="panel-inner">
+
+          <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview" tabindex="0">
+            <h2>Start Postgres</h2>
+            <div class="meta">Panel 1 of 5</div>
+            <p>Placeholder panel. Replace this markup with your real content.</p>
+            <div class="placeholder-block">Overview content goes here.</div>
+          </section>
+
+          <section id="panel-files" role="tabpanel" aria-labelledby="tab-files" tabindex="0" hidden>
+            <h2>Meta Commands</h2>
+            <div class="meta">Meta commands always start with a '\'</div>
+            <p>Important meta commands are:</p>
+            <div class="placeholder-block">
+              <ol start="1">
+                <li>\l : list available databases</li>
+                <li>\c : load existing database</li>
+                <li>\dt : list all tables in current database</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ol>
+            </div>
+          </section>
+
+          <section id="panel-activity" role="tabpanel" aria-labelledby="tab-activity" tabindex="0" hidden>
+            <h2>Standard SQL Commands</h2>
+            <div class="meta">Panel 3 of 5</div>
+            <p>SQL commands that would work on any SQL compliant database - there are many...</p>
+            <div class="placeholder-block">
+              <ol start="1">
+                <li>CREATE DATABASE :</li>
+                <li>DROP DATABASE</li>
+                <li>DROP TABLE</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ol>
+            </div>
+          </section>
+
+          <section id="panel-settings" role="tabpanel" aria-labelledby="tab-settings" tabindex="0" hidden>
+            <h2>Settings</h2>
+            <div class="meta">Panel 4 of 5</div>
+            <p>SQL commands that would work on any SQL compliant database - there are many...</p>
+            <div class="placeholder-block">Settings content goes here.</div>
+          </section>
+
+          <section id="panel-help" role="tabpanel" aria-labelledby="tab-help" tabindex="0" hidden>
+            <h2>Help</h2>
+            <div class="meta">Panel 5 of 5</div>
+            <p>Placeholder panel for documentation or shortcuts.</p>
+            <div class="placeholder-block">Help content goes here.</div>
+          </section>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============ main content ============ -->
+    <main class="main">
+      <h1>Vertical Tab Widget</h1>
+      <p class="lede">
+        The tab strip is pinned to the left-hand edge of the window. Tabs run top to
+        bottom with an icon and a label; the selected tab opens a panel to its right.
+      </p>
+
+      <section class="hint-card">
+        <h2>Try it</h2>
+        <ul>
+          <li>Click a tab on the left to switch panels.</li>
+          <li>Click the <em>selected</em> tab again to collapse the panel.</li>
+          <li>Focus a tab and use <kbd>↑</kbd> / <kbd>↓</kbd>, <kbd>Home</kbd>, <kbd>End</kbd>.</li>
+        </ul>
+      </section>
+    </main>
+
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var tablist = document.querySelector('[role="tablist"]');
+      var tabs = Array.prototype.slice.call(tablist.querySelectorAll('[role="tab"]'));
+      var panel = document.getElementById('tab-panel');
+      var panels = tabs.map(function (tab) {
+        return document.getElementById(tab.getAttribute('aria-controls'));
+      });
+
+      function selectedIndex() {
+        for (var i = 0; i < tabs.length; i++) {
+          if (tabs[i].getAttribute('aria-selected') === 'true') return i;
+        }
+        return 0;
+      }
+
+      /** Show tab at `index`; if it is already selected, toggle the panel instead. */
+      function activate(index) {
+        index = (index + tabs.length) % tabs.length;
+
+        if (index === selectedIndex() && !panel.classList.contains('is-collapsed')) {
+          panel.classList.add('is-collapsed');
+          return;
+        }
+
+        tabs.forEach(function (tab, i) {
+          var on = i === index;
+          tab.setAttribute('aria-selected', on ? 'true' : 'false');
+          tab.tabIndex = on ? 0 : -1;
+          panels[i].hidden = !on;
+        });
+
+        panel.classList.remove('is-collapsed');
+      }
+
+      tabs.forEach(function (tab, i) {
+        tab.addEventListener('click', function () {
+          activate(i);
+          tab.focus();
+        });
+      });
+
+      // Roving focus: arrows move between tabs and activate them (automatic activation).
+      // Enter/Space are intentionally left to the native button click so that the
+      // collapse-on-second-click behaviour is not toggled twice.
+      tablist.addEventListener('keydown', function (event) {
+        var current = tabs.indexOf(event.target);
+        if (current === -1) return;
+
+        var next;
+        switch (event.key) {
+          case 'ArrowDown': next = current + 1; break;
+          case 'ArrowUp': next = current - 1; break;
+          case 'Home': next = 0; break;
+          case 'End': next = tabs.length - 1; break;
+          default: return;
+        }
+
+        event.preventDefault();
+        activate(next);
+        tabs[(next + tabs.length) % tabs.length].focus();
+      });
+    })();
+  </script>
+</body>
+
+</html>
