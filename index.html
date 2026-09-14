@@ -58,7 +58,7 @@
         </button>
 
         <button class="tab" id="tab-settings" role="tab" type="button" aria-selected="false"
-          aria-controls="panel-settings" tabindex="-1">
+          aria-controls="panel-task" tabindex="-1">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M4 6h16M4 12h16M4 18h16" />
@@ -66,7 +66,7 @@
             <circle cx="15" cy="12" r="2.4" fill="currentColor" stroke="none" />
             <circle cx="8" cy="18" r="2.4" fill="currentColor" stroke="none" />
           </svg>
-          <span class="label">Settings</span>
+          <span class="label">Task</span>
         </button>
 
         <button class="tab" id="tab-help" role="tab" type="button" aria-selected="false" aria-controls="panel-help"
@@ -89,8 +89,19 @@
 
           <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview" tabindex="0">
             <h2>Start Postgres</h2>
-            <div class="meta">Panel 1 of 5</div>
-            <p>Placeholder panel. Replace this markup with your real content.</p>
+            <div class="meta">https://www.youtube.com/watch?v=bssWKAX74uA</div>
+            <ol start="1">
+              <li>Using Bash, start the server - once only. The user is 'postgres'.
+                <p>>> postgres -U postgres</p>
+              </li>
+              <li>Use psql to interact with the postgres server.
+                <p>>> psql</p>
+              </li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ol>
             <div class="placeholder-block">Overview content goes here.</div>
           </section>
 
@@ -99,12 +110,12 @@
             <div class="meta">Meta commands always start with a '\'</div>
             <p>Important meta commands are:</p>
             <div class="placeholder-block">
-              <ol start="1">
+              <ol style="list-style-type: disc;">
                 <li>\l : list available databases</li>
                 <li>\c : load existing database</li>
                 <li>\dt : list all tables in current database</li>
-                <li></li>
-                <li></li>
+                <li>\conninfo</li>
+                <li>\! clear   (sends command to CLI not to psql)</li>
                 <li></li>
                 <li></li>
                 <li></li>
@@ -119,14 +130,15 @@
             <div class="meta">Panel 3 of 5</div>
             <p>SQL commands that would work on any SQL compliant database - there are many...</p>
             <div class="placeholder-block">
-              <ol start="1">
-                <li>CREATE DATABASE :</li>
-                <li>DROP DATABASE</li>
-                <li>DROP TABLE</li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+              <ol style="list-style-type: disc;"">
+                <li>CREATE DATABASE my_own_db;</li>
+                <li>DROP DATABASE my_own_db;</li>
+                <li>CREATE TABLE contacts;</li>
+                <li>DROP TABLE contacts;</li>
+                <li>SELECT * FROM contacts;</li>
+                <li>SELECT count(*) FROM contacts;</li>
+                <li>SELECT * FROM contacts WHERE name = 'linda@gmail.com';</li>
+                <li>SELECT * FROM contacts WHERE name = '%lin%';</li>
                 <li></li>
                 <li></li>
                 <li></li>
@@ -134,11 +146,29 @@
             </div>
           </section>
 
-          <section id="panel-settings" role="tabpanel" aria-labelledby="tab-settings" tabindex="0" hidden>
-            <h2>Settings</h2>
-            <div class="meta">Panel 4 of 5</div>
-            <p>SQL commands that would work on any SQL compliant database - there are many...</p>
-            <div class="placeholder-block">Settings content goes here.</div>
+          <section id="panel-task" role="tabpanel" aria-labelledby="tab-settings" tabindex="0" hidden>
+                <h2>Task</h2>
+                <div class="meta">Panel 4 of 5</div>
+                <p>Create a new table in the database containing the following columns:</p>
+                <div class="placeholder-block">
+                  <ol style="list-style-type: disc;">
+                    <li>id (integer, primary key)</li>
+                    <li>name (text)</li>
+                    <li>email (text)</li>
+                    <li>created_at (timestamp)</li>
+                  </ol>
+                </div>
+                <p>Once the table is created, insert at least 5 records into the table.</p>
+                <div class="placeholder-block">
+                  <pre>
+CREATE TABLE users( 
+user_id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+username varchar(255) NOT NULL UNIQUE,
+email varchar(255) NOT NULL UNIQUE,
+created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+                  </pre>
+                </div>
           </section>
 
           <section id="panel-help" role="tabpanel" aria-labelledby="tab-help" tabindex="0" hidden>

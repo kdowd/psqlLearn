@@ -262,7 +262,7 @@ body {
 
 .panel-inner .meta {
   font-size: 12.5px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 0.07em;
   color: var(--text-muted);
   margin-bottom: 18px;
