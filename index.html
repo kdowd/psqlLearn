@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vertical Tabs — Left Side Panel</title>
+  <title>postgre SQL</title>
   <link rel="stylesheet" href="./rootvars.css">
   <link rel="stylesheet" href="./styles.css">
   <style>
@@ -155,19 +155,31 @@
 
     <!-- ============ main content ============ -->
     <main class="main">
-      <h1>Vertical Tab Widget</h1>
+      <h1>PostGres Install</h1>
       <p class="lede">
-        The tab strip is pinned to the left-hand edge of the window. Tabs run top to
-        bottom with an icon and a label; the selected tab opens a panel to its right.
+        We need to install the PostGres database and server onto our Yoobee machines.
+        We can use Scoop an installer that runs from Powershell.
       </p>
 
       <section class="hint-card">
-        <h2>Try it</h2>
-        <ul>
-          <li>Click a tab on the left to switch panels.</li>
-          <li>Click the <em>selected</em> tab again to collapse the panel.</li>
-          <li>Focus a tab and use <kbd>↑</kbd> / <kbd>↓</kbd>, <kbd>Home</kbd>, <kbd>End</kbd>.</li>
-        </ul>
+        <ol start="1">
+          <li>Open Powershell. (PS)</li>
+          <li>In PS run the following lines:
+            <p>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser</p>
+            <p>Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression</p>
+          </li>
+
+          <li>Still in PS Test that scoop is properly installed:
+            <p>scoop --version</p>
+          </li>
+          <li>Now install PostGres with
+            <p>scoop install main/postgresql</p>
+          </li>
+          <li>Finally test PostGres install with:
+            <p>postgres --version</p>
+          </li>
+          <li>You can now close Powershell and from on use GitBash as your CLI </li>
+        </ol>
       </section>
     </main>
 
